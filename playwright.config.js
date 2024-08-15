@@ -26,9 +26,17 @@ module.exports = defineConfig({
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
-    browserName: "chromium",
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "on-first-retry",
+
+    browserName: "chromium",
+    //useing always headed mode
+    headless: false,
+
+    //set maximum timeout
+    timeout: 30000,
+    //setting time out for expects as 5 seconds
+    expect: { timeout: 5000 },
   },
 
   /* Configure projects for major browsers */
