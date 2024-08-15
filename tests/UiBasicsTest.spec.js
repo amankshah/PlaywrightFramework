@@ -22,14 +22,11 @@ test("First Test", async ({ browser }) => {
 
   await expect(page.locator("[style*='block']")).toContainText("Incorrect");
 
-//now filling correct informations 
+  //now filling correct informations
 
   await page.locator("#username").fill("rahulshettyacademy");
   await page.locator('[type="password"]').fill("learning");
   await page.locator("#signInBtn").click();
-
-
-
 
   //   expect(await page.title()).toBe("LoginPage Practise | Rahul Shetty Academy");  //also correct
 });
