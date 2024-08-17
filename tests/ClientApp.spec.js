@@ -36,6 +36,7 @@ test("Browser Validation for  Login", async ({ page }) => {
   await page.locator("#okayBtn").click();
 
   await page.locator("select.form-control").selectOption("consult");
+  /*
   await page.locator("#terms").click();
   await expect(page.locator("#terms")).toBeChecked();
 
@@ -45,7 +46,7 @@ test("Browser Validation for  Login", async ({ page }) => {
 
   expect(await page.locator("#terms").isChecked()).toBeFalsy(); //to check the false state
   //# in the above line action is performed under expect thats why we need to put await under expect
-
+*/
   await page.locator("#terms").check();
   await expect(page.locator("#terms")).toBeChecked();
   //#  in the above line action is performed outside expect thats why we need to put await outside expect

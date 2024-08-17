@@ -12,6 +12,10 @@ const { defineConfig, devices } = require("@playwright/test");
  */
 module.exports = defineConfig({
   testDir: "./tests",
+  //set maximum timeout
+  timeout: 30000,
+  //setting time out for expects as 5 seconds
+  expect: { timeout: 5000 },
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -29,14 +33,11 @@ module.exports = defineConfig({
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "on-first-retry",
 
-    browserName: "webkit",
+    browserName: "chromium",
+    screenshot: "on",
+    trace: "on",
     //using always headed mode
     headless: false,
-
-    //set maximum timeout
-    timeout: 30000,
-    //setting time out for expects as 5 seconds
-    expect: { timeout: 5000 },
   },
 
   /* Configure projects for major browsers */
