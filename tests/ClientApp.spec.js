@@ -22,7 +22,6 @@ test("Browser Validation for  Login", async ({ page }) => {
   const signInBtn = page.locator("#signInBtn");
   const error = page.locator(".alert-danger");
 
-  
   const documentLink = page.locator("[href*='documents-req']");
 
   await page.goto(loginPracticePageUrl);

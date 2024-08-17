@@ -29,8 +29,8 @@ module.exports = defineConfig({
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "on-first-retry",
 
-    browserName: "chromium",
-    //useing always headed mode
+    browserName: "webkit",
+    //using always headed mode
     headless: false,
 
     //set maximum timeout
