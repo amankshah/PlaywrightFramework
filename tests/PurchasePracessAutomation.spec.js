@@ -78,8 +78,10 @@ test.only("Client App Login test", async ({ page }) => {
   console.log(orderId);
 
   const OderHistoryPage = page.locator("[routerlink*='myorders']");
-
   await OderHistoryPage.first().click();
+
+  await page.locator("tbody tr").first().waitFor();
+
   const OrderList = page.locator("tbody tr");
   OrderList.first().waitFor();
   const countOrderList = await OrderList.count();
