@@ -5,7 +5,7 @@ test("First Test", async ({ browser }) => {
   const page = await context.newPage();
 
   await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
-  //LoginPage Practise | Rahul Shetty Academy
+  //LoginPage Practice | Rahul Shetty Academy
 
   console.log(await page.title());
 
@@ -62,6 +62,3 @@ test("Getting Product name from UI", async ({ page }) => {
     .textContent();
   console.log(lastProductName);
 });
-
-
-
