@@ -38,9 +38,8 @@ class APIUtils {
 
     const OrderResponseJSON = await OrderResponse.json();
     const OrderIdFromAPI = OrderResponseJSON.orders[0];
-    console.log(OrderIdFromAPI);
-    response.ordersId = OrderIdFromAPI;
 
+    response.ordersId = OrderIdFromAPI;
     return response;
   }
 }

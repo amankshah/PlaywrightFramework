@@ -28,7 +28,7 @@ test("Client App Login test", async ({ page }) => {
   await page.goto("https://rahulshettyacademy.com/client");
   const orderId = response.ordersId;
 
-  console.log(orderId);
+
 
   const OrderHistoryPage = page.locator("[routerlink*='myorders']");
   await OrderHistoryPage.first().click();
