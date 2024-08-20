@@ -1,4 +1,5 @@
 const { test, expect, request } = require("@playwright/test");
+
 const ProductToBePurchased = "ZARA COAT 3";
 const email = "testtopro@gmail.com";
 const password = "Aman@1992";
@@ -6,6 +7,7 @@ const loginPayLoad = {
   userEmail: email,
   userPassword: password,
 };
+
 let userToken = null;
 
 test.beforeAll(async () => {
@@ -34,7 +36,6 @@ test.only("Client App Login test", async ({ page }) => {
   // token in this line is the value of token is passed
 
   await page.goto("https://rahulshettyacademy.com/client");
-
 
   //   await page.locator("#userEmail").fill(email);
   //   await page.locator("#userPassword").fill(password);
@@ -125,3 +126,5 @@ test.only("Client App Login test", async ({ page }) => {
     }
   }
 });
+
+//Placing an order to the webpage using api
