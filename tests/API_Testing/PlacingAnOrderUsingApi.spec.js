@@ -46,6 +46,8 @@ test.beforeAll(async () => {
 });
 
 test.only("Client App Login test", async ({ page }) => {
+  const apiUtils = new APIUtils(apiContext);
+
   //# Trying to login with API and storing the token in the local storage
   await page.goto("https://rahulshettyacademy.com/client");
   page.addInitScript((value) => {
