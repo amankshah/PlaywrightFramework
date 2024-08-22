@@ -4,14 +4,21 @@ test("First Test", async ({ browser }) => {
   const context = await browser.newContext();
   const page = await context.newPage();
 
-  page.route("**/*.css", (route) => {
-    //#Blocking Css
-    route.abort();
-  });
+  //   page.route("**/*.css", (route) => {
+  //     //#Blocking Css
+  //     route.abort();
+  //   });
 
-  page.route("**/*.{jpg,png,jpeg}", (route) => {
-    //#Blocking Images to load
-    route.abort();
+  //   page.route("**/*.{jpg,png,jpeg}", (route) => {
+  //     //#Blocking Images to load
+  //     route.abort();
+  //   });
+
+  await page.on("request", (request) => {
+    console.log(`${request.method()} - ${request.url()}`);
+  });
+  await page.on("response", (response) => {
+    console.log(`${response.status()} - ${response.url()}`);
   });
 
   await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
