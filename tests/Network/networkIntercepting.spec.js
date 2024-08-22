@@ -1,5 +1,5 @@
 const { test, expect, request } = require("@playwright/test");
-import APIUtils from "./Utils/APIUtils"; // ES Module syntax
+import APIUtils from "../API_Testing/Utils/APIUtils"; // ES Module syntax
 let response;
 
 const ProductToBePurchased = "ZARA COAT 3";
