@@ -1,5 +1,6 @@
 const { test, expect } = require("@playwright/test");
 import LoginPage from "../pageObjects/LoginPage.js";
+import DashboardPage from "../pageObjects/DashboardPage.js";
 
 test("Login Test", async ({ page }) => {
   const UserEmail = "testtopro@gmail.com";
@@ -10,14 +11,8 @@ test("Login Test", async ({ page }) => {
   await loginPage.goTo();
   await loginPage.ValidLogin(UserEmail, UserPassword);
 
-  await page.locator(".card-body b").first().waitFor();
-  const titles = await page.locator(".card-body b").allTextContents();
+  const dashboardPage = new DashboardPage(page);
 
-  const products = page.locator(".card-body");
-  const count = await products.count();
-
-  const CartButton = page.locator("[routerlink*='/cart']");
-  const cartCount = await page
-    .locator("[routerlink*='/cart'] label")
-    .textContent();
+  await dashboardPage.searchProduct(ProductToBePurchased);
+  await dashboardPage.clickCartButton();
 });
