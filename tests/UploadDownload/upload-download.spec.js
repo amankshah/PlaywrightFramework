@@ -37,6 +37,9 @@ async function readExcel(worksheet, SearchText) {
 }
 
 let filepath = "C:/Users/sabhyata/Downloads/download.xlsx";
+let textSearch = "Mango";
+let newPrice = "600";
+
 test("Upload and Download Excel Validation", async ({ page }) => {
   await page.goto(
     "https://rahulshettyacademy.com/upload-download-test/index.html"
@@ -45,7 +48,17 @@ test("Upload and Download Excel Validation", async ({ page }) => {
 
   await page.getByRole("button", { name: "Download" }).click();
   await downloadPromise;
-  await WriteExcel("Mango", "600", { rowChange: 0, colChange: 2 }, filepath);
+  await WriteExcel(
+    textSearch,
+    newPrice,
+    { rowChange: 0, colChange: 2 },
+    filepath
+  );
   await page.locator("#fileinput").click();
   await page.locator("#fileinput").setInputFiles(filepath);
+
+  //Verifying the updated data in the webpage
+  const textLocator = await page.getByText(textSearch);
+  const textRow = await page.getByRole("row").filter({ has: textLocator });
+  await expect(textRow.locator("#cell-4-undefined")).toContainText(newPrice);
 });
