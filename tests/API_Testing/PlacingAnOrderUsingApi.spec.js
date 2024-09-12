@@ -45,7 +45,7 @@ test.beforeAll(async () => {
   console.log(OrderIdFromAPI);
 });
 
-test.only("Client App Login test", async ({ page }) => {
+test("Client App Login test", async ({ page }) => {
   const apiUtils = new APIUtils(apiContext);
 
   //# Trying to login with API and storing the token in the local storage
