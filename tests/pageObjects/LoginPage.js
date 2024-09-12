@@ -15,8 +15,6 @@ class LoginPage {
     await this.UserPassword.fill(password);
     await this.SignInButton.waitFor();
     await this.SignInButton.click();
-
-    await this.page.waitForLoadState("networkidle");
   }
 }
 export default LoginPage;

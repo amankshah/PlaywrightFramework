@@ -2,8 +2,10 @@
   "name": "playwright",
   "version": "1.0.0",
   "main": "index.js",
+  
   "scripts": {
-    "test": "npx playwright test tests/PlacingAnOrderRefactored.spec.js --headed"
+    "test": "npx playwright test tests/PageObjectImplementation/ClientApp.spec.js --headed",
+    "pom": "npx playwright test tests/PageObjectImplementation/ClientApp.spec.js --headed"
   },
   "keywords": [],
   "author": "",
