@@ -4,7 +4,8 @@ import POManager from "../pageObjects/POManager.js";
 const dataSet = JSON.parse(
   JSON.stringify(require("../../Utils/ParameterizedProcessTestData.json"))
 );
-
+// test.describe.configure({ mode: "parallel" }); // to run the test cases in single  in parallel mode
+// test.describe.configure({ mode: "serial" }); // to run the test cases in single  in serial mode- In this mode if any test case fails it will stop the execution
 for (const data of dataSet) {
   test(`Product Purchase Test - ${data.product}`, async ({ page }) => {
     const poManager = new POManager(page);
@@ -37,7 +38,7 @@ for (const data of dataSet) {
     expect(orderId.includes(await ordersHistoryPage.getOrderId())).toBeTruthy();
   });
 }
-customTest.only(
+customTest(
   `Product Purchase Test `,
   async ({ page, testDataForOrder }) => {
     const poManager = new POManager(page);
