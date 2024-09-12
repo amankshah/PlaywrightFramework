@@ -1,0 +1,8 @@
+
+Promise {
+  <pending>,
+  [Symbol(async_id_symbol)]: 30516,
+  [Symbol(trigger_async_id_symbol)]: 29533,
+  [Symbol(kResourceStore)]: undefined
+}
+ | 66e30b59ae2afd4c0b72698b | 
