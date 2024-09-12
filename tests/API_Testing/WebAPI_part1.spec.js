@@ -28,7 +28,7 @@ test.beforeAll(async () => {
 
 test.beforeEach(() => {});
 
-test.only("@api Client App Login test", async ({ page }) => {
+test("@api Client App Login test", async ({ page }) => {
   //# Trying to login with API and storing the token in the local storage
   page.addInitScript((value) => {
     window.localStorage.setItem("token", value);
