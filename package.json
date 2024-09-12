@@ -2,11 +2,14 @@
   "name": "playwright",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
+ "scripts": {
     "test": "npx playwright test tests/PageObjectImplementation/ClientApp.spec.js --headed",
     "customConfig": "npx playwright test tests/PageObjectImplementation/ParameterizedPurchaseUsingFixers.spec.js --config playwright.config1.js",
-    "chrome": "npx playwright test tests/PageObjectImplementation/ParameterizedPurchaseUsingFixers.spec.js --config playwright.config1.js project=chromium"
-  },
+    "chrome": "npx playwright test tests/PageObjectImplementation/ParameterizedPurchaseUsingFixers.spec.js --config playwright.config1.js --project=chromium2",
+    "web": "npx playwright test --grep=@web --config playwright.config1.js",
+    "api": "npx playwright test --grep=@api --config playwright.config1.js"
+},
+
   "keywords": [],
   "author": "",
   "license": "ISC",
