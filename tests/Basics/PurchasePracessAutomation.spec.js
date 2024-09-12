@@ -2,7 +2,7 @@ const { test, expect } = require("@playwright/test");
 
 
 //# npx playwright test --grep=@web   use this code to run only web
-test.only("@web Client App Login test", async ({ page }) => {
+test("@web Client App Login test", async ({ page }) => {
   await page.goto("https://rahulshettyacademy.com/client");
   const ProductToBePurchased = "ZARA COAT 3";
   const email = "testtopro@gmail.com";
