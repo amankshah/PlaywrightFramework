@@ -23,7 +23,12 @@ module.exports = defineConfig({
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 1,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : 1,
+  workers: process.env.CI ? 1 : undefined,  //set workeer at 1 to run the test cases in sequence 
+  //# By Default playwright run the files under tests folder in parallel.
+  //#but the test cases under one file will always run in sequence
+  //#to run in parallel set fullyParallel: false
+  //#to run in sequence set fullyParallel: true
+  //#to run in parallel set fullyParallel: true and set workers: 1
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: "html",
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
@@ -55,7 +60,7 @@ module.exports = defineConfig({
         permissions: ["geolocation"], // giving permission for geolocation
         //using always headed mode
         headless: false,
-        video: "retain-on-failure", //this will record the video 
+        video: "retain-on-failure", //this will record the video
 
         // viewport: { width: 720, height: 720 },
       },
