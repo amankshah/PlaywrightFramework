@@ -1,13 +1,16 @@
 import { test, expect } from "@playwright/test";
 import POManager from "../pageObjects/POManager.js";
+const dataSet = JSON.parse(
+  JSON.stringify(require("../../Utils/placeOrderTestData.json"))
+);
 
 test("Login Test", async ({ page }) => {
   const poManager = new POManager(page);
   const loginPage = poManager.getLoginPage();
 
-  const UserEmail = "testtopro@gmail.com";
-  const UserPassword = "Aman@1992";
-  const ProductToBePurchased = "ZARA COAT 3";
+  const UserEmail = dataSet.username;
+  const UserPassword = dataSet.password;
+  const ProductToBePurchased = dataSet.product;
 
   await loginPage.goTo();
   await loginPage.ValidLogin(UserEmail, UserPassword);
@@ -16,7 +19,7 @@ test("Login Test", async ({ page }) => {
 
   await dashboardPage.searchProductAndAddToCart(ProductToBePurchased);
 
-   await dashboardPage.clickCartButton();
+  await dashboardPage.clickCartButton();
 
   const cartPage = poManager.getCartPage();
   await cartPage.VerifyProductIsDisplayed(ProductToBePurchased);
