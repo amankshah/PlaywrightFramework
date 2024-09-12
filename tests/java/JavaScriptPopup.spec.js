@@ -1,6 +1,6 @@
 const { test, expect } = require("@playwright/test");
 
-test.only("JavaScript Popup", async ({ page }) => {
+test("JavaScript Popup", async ({ page }) => {
   await page.goto("https://rahulshettyacademy.com/AutomationPractice/");
   await page.locator("#alertbtn").click();
   page.on("dialog", async (dialog) => {
