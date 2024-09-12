@@ -1,5 +1,5 @@
 const { test, expect } = require("@playwright/test");
-test("Calender Handling", async ({ page }) => {
+test("@web Calender Handling", async ({ page }) => {
   const MonthNum = "6";
   const Year = "2023";
   const Day = "11";

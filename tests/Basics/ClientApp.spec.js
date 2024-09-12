@@ -57,7 +57,7 @@ test("Browser Validation for  Login", async ({ page }) => {
   await page.locator("#signInBtn").click();
 });
 
-test("Child Window Handling", async ({ browser }) => {
+test("@web Child Window Handling", async ({ browser }) => {
   const context = await browser.newContext();
   const page = await context.newPage();
   const userName = page.locator("#username");

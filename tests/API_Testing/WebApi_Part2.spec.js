@@ -29,7 +29,7 @@ test.beforeAll(async ({ browser }) => {
   });
 });
 
-test("Client App Login test", async () => {
+test("@api Client App Login test", async () => {
   const page = await webContext.newPage();
 
   await page.goto("https://rahulshettyacademy.com/client");

@@ -20,7 +20,7 @@ test.beforeAll(async () => {
   response = await apiUtils.createOrder(OrderPayLoad);
 });
 
-test("Client App Login test", async ({ page }) => {
+test("@api Client App Login test", async ({ page }) => {
   await page.addInitScript((value) => {
     window.localStorage.setItem("token", value);
   }, response.token);
