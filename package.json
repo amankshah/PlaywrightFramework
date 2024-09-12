@@ -6,7 +6,7 @@
   "scripts": {
     "test": "npx playwright test tests/PageObjectImplementation/ClientApp.spec.js --headed",
     "customConfig": "npx playwright test tests/PageObjectImplementation/ParameterizedPurchaseUsingFixers.spec.js --config playwright.config1.js",
-    "chrome": "npx playwright test tests/PageObjectImplementation/ParameterizedPurchaseUsingFixers.spec.js --config playwright.config.js project=chromium"
+    "chrome": "npx playwright test tests/PageObjectImplementation/ParameterizedPurchaseUsingFixers.spec.js --config playwright.config1.js project=chromium"
   },
   "keywords": [],
   "author": "",
