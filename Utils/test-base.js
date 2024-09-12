@@ -1,5 +1,4 @@
 const base = require("@playwright/test");
-
 exports.customTest = base.test.extend({
   testDataForOrder: {
     username: "testtopro@gmail.com",
